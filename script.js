@@ -1,6 +1,4 @@
-// jogo de pedra papel tesoura
-
-
+// JOKENPO
 
 // um valor aleatorio apresentado pelo computador
 
@@ -51,10 +49,7 @@ function roundjokenpo(computerchoice, userchoice) {
         score++;
         console.log(`Voce ganhou ${userchoice} vence ${computerchoice}`);
         return score;
-    }
-            
-        
-
+    }      
 }
 
 //jogar o jogo 5x
@@ -76,17 +71,9 @@ function playgame() {
     }
 }
 
+//joga o jogo
+
 playgame();
-
-// //chama as funcoes
-
-// let computerSelection = getcomputerchoice();
-
-// let userSelection = getuserchoice();
-
-// // mostra quem venceu
-
-// let result = roundjokenpo(computerSelection, userSelection);
 
 
 
