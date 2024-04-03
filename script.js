@@ -7,9 +7,10 @@
 function getcomputerchoice() {
     let computerchoice = '';
     number = Math.floor((Math.random() * 3) + 1);
-    if number === 1 {
+    console.log(number);
+    if (number === 1) {
         computerchoice = 'ROCK';
-    } else if number === 2{
+    } else if (number === 2) {
         computerchoice = 'PAPER';
     } else {
         computerchoice = 'SCIZOR';
@@ -20,8 +21,18 @@ function getcomputerchoice() {
 // um valor apresentado pelo usuario
 
 function getuserchoice() {
-    userchoice = prompt('Digite sua opcao: ROCK, PAPER OR SCIZOR');
-    userchoice = userchoice.toUpperCase();
+    keepgoing = true;
+    let userchoice = '';
+    while (keepgoing) {
+        userchoice = prompt('Digite sua opcao: ROCK, PAPER OR SCIZOR');
+        userchoice = userchoice.toUpperCase();
+        if (userchoice === 'PAPER' || userchoice === 'SCIZOR' || userchoice === 'ROCK')
+            return userchoice;
+        else
+            alert('Digite uma opcao valida. Tente novamente.')
+            keepgoing = true;
+
+    }
 }
 
 // compara os dois valores
@@ -48,4 +59,10 @@ let computerSelection = getcomputerchoice();
 
 let userSelection = getuserchoice();
 
+console.log(userSelection);
+
+console.log(computerSelection);
+
 let result = roundjokenpo(computerSelection, userSelection);
+
+console.log (result);
