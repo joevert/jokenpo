@@ -36,18 +36,21 @@ function getuserchoice() {
 
 // compara os dois valores
 
-function roundjokenpo(computerchoice, userchoice, score) {
-    let result = '';
+function roundjokenpo(computerchoice, userchoice) {
+    let score = 0;
     if (computerchoice === userchoice) {
-        return result = ('Foi um empate!');
+        console.log('Foi um empate!')
+        return score;
     } else if ((computerchoice === 'ROCK' && userchoice === 'SCIZOR') 
     || (computerchoice === 'PAPER' && userchoice === 'ROCK') 
     || (computerchoice === 'SCIZOR' && userchoice === 'PAPER')) {
         score--;
-        return result = (`Voce perdeu! ${computerchoice} vence ${userchoice}`);            
+        console.log(`Voce perdeu! ${computerchoice} vence ${userchoice}`)
+        return score;            
     } else {
         score++;
-        return result = (`Voce ganhou ${userchoice} vence ${computerchoice}`);
+        console.log(`Voce ganhou ${userchoice} vence ${computerchoice}`);
+        return score;
     }
             
         
@@ -58,28 +61,32 @@ function roundjokenpo(computerchoice, userchoice, score) {
 
 function playgame() {
     let score = 0;
-    for (let cont = 0; let < 5; let++) {
+    for (let cont = 0; cont < 5; cont++) {
         let computerSelection = getcomputerchoice();
         let userSelection = getuserchoice();
-        let result = roundjokenpo(computerSelection, userSelection, score);
+        score += roundjokenpo(computerSelection, userSelection);
+        console.log(score);
     }
     if (score > 0) {
-        console.log(`Parabens, voce venceu`);
+        console.log(`Parabens, voce venceu!`);
+    } else if (score === 0){
+        console.log(`Temos um empate!`);
     } else {
-        console.log(`Infelizmente voce perdeu :()`);
+        console.log(`Infelizmente voce perdeu :()`)
     }
 }
 
+playgame();
 
-//chama as funcoes
+// //chama as funcoes
 
-let computerSelection = getcomputerchoice();
+// let computerSelection = getcomputerchoice();
 
-let userSelection = getuserchoice();
+// let userSelection = getuserchoice();
 
-// mostra quem venceu
+// // mostra quem venceu
 
-let result = roundjokenpo(computerSelection, userSelection);
+// let result = roundjokenpo(computerSelection, userSelection);
 
 
 
