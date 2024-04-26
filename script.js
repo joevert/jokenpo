@@ -16,14 +16,47 @@ container.appendChild(botaoPaper);
 container.appendChild(botaoRock);
 container.appendChild(botaoScizor);
 
-botaoRock.addEventListener('click', () => 
-    roundjokenpo(getcomputerchoice(), "ROCK"));
 
-botaoPaper.addEventListener('click', () => 
-    roundjokenpo(getcomputerchoice(), "PAPER"));
+//cria variaveis para contagem
 
-botaoScizor.addEventListener('click', () => 
-    roundjokenpo(getcomputerchoice(), "SCIZOR"));
+
+let playerScore = 0;
+let computerScore = 0;
+let score = 0;
+
+//ativacao dos botoes
+
+    
+botaoRock.addEventListener('click', () => {
+    score = roundjokenpo(getcomputerchoice(), "ROCK")
+    updateScore(score);
+});
+    
+
+botaoPaper.addEventListener('click', () => {
+    score = roundjokenpo(getcomputerchoice(), "PAPER")
+    updateScore(score);
+});
+
+botaoScizor.addEventListener('click', () => {
+    score = roundjokenpo(getcomputerchoice(), "SCIZOR")
+    updateScore(score);
+});
+    
+
+
+
+//atualiza o score
+
+function updateScore(score) {
+    if (score > 0) playerScore++;
+    else if (score < 0) computerScore++;
+    const div = document.createElement('div');
+    div.textContent = `Voce ${playerScore} x ${computerScore} PC`; 
+    container.appendChild(div);
+}
+
+
 
 
 // um valor aleatorio apresentado pelo computador
