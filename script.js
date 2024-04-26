@@ -16,6 +16,16 @@ container.appendChild(botaoPaper);
 container.appendChild(botaoRock);
 container.appendChild(botaoScizor);
 
+botaoRock.addEventListener('click', () => 
+    roundjokenpo(getcomputerchoice(), "ROCK"));
+
+botaoPaper.addEventListener('click', () => 
+    roundjokenpo(getcomputerchoice(), "PAPER"));
+
+botaoScizor.addEventListener('click', () => 
+    roundjokenpo(getcomputerchoice(), "SCIZOR"));
+
+
 // um valor aleatorio apresentado pelo computador
 
 function getcomputerchoice() {
@@ -63,7 +73,7 @@ function roundjokenpo(computerchoice, userchoice) {
         return score;            
     } else {
         score++;
-        console.log(`Voce ganhou ${userchoice} vence ${computerchoice}`);
+        console.log(`Voce ganhou! ${userchoice} vence ${computerchoice}`);
         return score;
     }      
 }
