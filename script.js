@@ -62,20 +62,21 @@ function getuserchoice() {
 
 function roundjokenpo(computerchoice, userchoice) {
     let score = 0;
+    let div = document.createElement("div");
+
     if (computerchoice === userchoice) {
-        console.log('Foi um empate!')
-        return score;
+        div.textContent = 'Foi um empate!';        
     } else if ((computerchoice === 'ROCK' && userchoice === 'SCIZOR') 
     || (computerchoice === 'PAPER' && userchoice === 'ROCK') 
     || (computerchoice === 'SCIZOR' && userchoice === 'PAPER')) {
         score--;
-        console.log(`Voce perdeu! ${computerchoice} vence ${userchoice}`)
-        return score;            
+        div.textContent = `Voce perdeu! ${computerchoice} vence ${userchoice}`;                  
     } else {
         score++;
-        console.log(`Voce ganhou! ${userchoice} vence ${computerchoice}`);
-        return score;
-    }      
+        div.textContent = `Voce ganhou! ${userchoice} vence ${computerchoice}`;        
+    }
+    container.appendChild(div);
+    return score;
 }
 
 
