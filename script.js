@@ -1,5 +1,21 @@
 // JOKENPO
 
+//cria botoes
+
+const container = document.querySelector("body");
+
+const botaoRock = document.createElement('button');
+const botaoPaper = document.createElement('button');
+const botaoScizor = document.createElement('button');
+
+botaoRock.textContent = "ROCK";
+botaoPaper.textContent = "PAPER";
+botaoScizor.textContent = "SCIZOR";
+
+container.appendChild(botaoPaper);
+container.appendChild(botaoRock);
+container.appendChild(botaoScizor);
+
 // um valor aleatorio apresentado pelo computador
 
 function getcomputerchoice() {
@@ -52,28 +68,31 @@ function roundjokenpo(computerchoice, userchoice) {
     }      
 }
 
+
+
+
 //jogar o jogo 5x
 
-function playgame() {
-    let score = 0;
-    for (let cont = 0; cont < 5; cont++) {
-        let computerSelection = getcomputerchoice();
-        let userSelection = getuserchoice();
-        score += roundjokenpo(computerSelection, userSelection);
-        console.log(score);
-    }
-    if (score > 0) {
-        console.log(`Parabens, voce venceu!`);
-    } else if (score === 0){
-        console.log(`Temos um empate!`);
-    } else {
-        console.log(`Infelizmente voce perdeu :()`)
-    }
-}
+// function playgame() {
+//     let score = 0;
+//     for (let cont = 0; cont < 5; cont++) {
+//         let computerSelection = getcomputerchoice();
+//         let userSelection = getuserchoice();
+//         score += roundjokenpo(computerSelection, userSelection);
+//         console.log(score);
+//     }
+//     if (score > 0) {
+//         console.log(`Parabens, voce venceu!`);
+//     } else if (score === 0){
+//         console.log(`Temos um empate!`);
+//     } else {
+//         console.log(`Infelizmente voce perdeu :()`)
+//     }
+// }
 
 //joga o jogo
 
-playgame();
+//playgame();
 
 
 
