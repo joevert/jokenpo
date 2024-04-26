@@ -53,7 +53,21 @@ function updateScore(score) {
     else if (score < 0) computerScore++;
     const div = document.createElement('div');
     div.textContent = `Voce ${playerScore} x ${computerScore} PC`; 
+    p = document.createElement('p');    
+
+    if (playerScore > 4) {        
+        p.textContent = 'PARABENS VOCE FOI O VENCEDOR';
+        const divs = document.querySelectorAll('div');
+        divs.forEach(div => div.remove());
+        playerScore = computerScore = 0;
+    } else if (computerScore > 4){
+        p.textContent = 'INFELIZMENTE VOCE FOI DERROTADO';
+        const divs = document.querySelectorAll('div');
+        divs.forEach(div => div.remove());
+        playerScore = computerScore = 0;
+    }
     container.appendChild(div);
+    container.appendChild(p);
 }
 
 
